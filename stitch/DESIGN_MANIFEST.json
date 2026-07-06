@@ -1,0 +1,35 @@
+[
+  {
+    "screenId": "91f48b9246c84eedb3255a31f8e7eabc",
+    "title": "Record Editor - Task Chip",
+    "htmlFile": "91f48b9246c84eedb3255a31f8e7eabc.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzljYjE5NDI5NGRhOTQxMGJiYWYzNGVkNjljZGFmNDM2EgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxNjE0ODgyMzE0ODQxMjk0MDI3NA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/task-chip-d420fc9d/stitch/91f48b9246c84eedb3255a31f8e7eabc.html",
+    "surfaceIds": [
+      "SURF_RECORD_EDITOR"
+    ]
+  },
+  {
+    "screenId": "aedd1d5e22684b6aa288f2395207aec1",
+    "title": "Insights - Task Chip",
+    "htmlFile": "aedd1d5e22684b6aa288f2395207aec1.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2JjZjM0NDQ1NGRmYTQ3Y2E5ZjhjZWQwZjM0MGY4YjVkEgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxNjE0ODgyMzE0ODQxMjk0MDI3NA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/task-chip-d420fc9d/stitch/aedd1d5e22684b6aa288f2395207aec1.html",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "89525dad7326499eb3656c8b0bd2f331",
+    "title": "Record Operations - Task Chip",
+    "htmlFile": "89525dad7326499eb3656c8b0bd2f331.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzljYmE0M2E0M2E4YTRiYzQ4YTM4ZDI3NmNlYTZlZjYwEgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxNjE0ODgyMzE0ODQxMjk0MDI3NA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/task-chip-d420fc9d/stitch/89525dad7326499eb3656c8b0bd2f331.html",
+    "surfaceIds": [
+      "SURF_RECORD_OPERATIONS"
+    ]
+  }
+]

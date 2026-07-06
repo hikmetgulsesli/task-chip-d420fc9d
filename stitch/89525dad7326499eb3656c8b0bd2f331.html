@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Record Operations - Task Chip</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&amp;family=Inter:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#ffede6",
+                      "tertiary-fixed": "#ffdbcd",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "inverse-surface": "#2d3133",
+                      "surface-dim": "#d8dadc",
+                      "surface-variant": "#e0e3e5",
+                      "secondary": "#505f76",
+                      "background": "#f7f9fb",
+                      "surface-container": "#eceef0",
+                      "outline-variant": "#c3c6d7",
+                      "on-surface-variant": "#434655",
+                      "tertiary": "#943700",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#00174b",
+                      "on-primary-container": "#eeefff",
+                      "inverse-primary": "#b4c5ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#f7f9fb",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "primary": "#004ac6",
+                      "surface": "#f7f9fb",
+                      "secondary-fixed": "#d3e4fe",
+                      "on-secondary-fixed": "#0b1c30",
+                      "surface-container-high": "#e6e8ea",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-background": "#191c1e",
+                      "error-container": "#ffdad6",
+                      "primary-container": "#2563eb",
+                      "surface-tint": "#0053db",
+                      "surface-container-highest": "#e0e3e5",
+                      "outline": "#737686",
+                      "on-tertiary-fixed": "#360f00",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-container-low": "#f2f4f6",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-surface": "#191c1e",
+                      "primary-fixed": "#dbe1ff",
+                      "on-secondary-container": "#54647a",
+                      "secondary-container": "#d0e1fb",
+                      "tertiary-container": "#bc4800"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "gutter": "12px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "base": "4px",
+                      "margin-desktop": "32px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-xs": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-xs": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+        }
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for dense lists */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-variant'); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline-variant'); 
+        }
+      </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row overflow-hidden bg-background">
+<!-- SideNavBar (Web Only) -->
+<nav class="hidden md:flex flex-col py-lg px-md gap-sm bg-surface dark:bg-inverse-surface border-r border-outline-variant fixed left-0 top-0 h-full w-[240px] z-50">
+<!-- Header -->
+<div class="flex items-center gap-sm px-sm mb-lg">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-weight="fill">deployed_code</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-black text-primary">Task Chip</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Utility v1.0</p>
+</div>
+</div>
+<!-- Main Nav Items -->
+<div class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-sm px-sm py-[8px] bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-xl font-label-md text-label-md transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">database</span>
+                Records
+            </a>
+<a class="flex items-center gap-sm px-sm py-[8px] text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-xl font-label-md text-label-md transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+                Editor
+            </a>
+<a class="flex items-center gap-sm px-sm py-[8px] text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-xl font-label-md text-label-md transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+                Insights
+            </a>
+</div>
+<!-- Footer Nav Items -->
+<div class="flex flex-col gap-xs mt-auto pt-sm border-t border-outline-variant">
+<a class="flex items-center gap-sm px-sm py-[8px] text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-xl font-label-md text-label-md transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-sm px-sm py-[8px] text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-xl font-label-md text-label-md transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+                Help
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col md:ml-[240px] h-screen overflow-hidden bg-background">
+<!-- TopAppBar (Mobile & Web Contextual Actions) -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-16 bg-background dark:bg-on-background border-b border-outline-variant dark:border-outline shrink-0 z-40 relative">
+<!-- Mobile Brand (Visible only md:hidden) -->
+<div class="md:hidden flex items-center gap-sm">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Task Chip</h1>
+</div>
+<!-- Contextual Search (Center/Left) -->
+<div class="hidden md:flex flex-1 max-w-lg relative group mr-lg">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors text-[18px]">search</span>
+<input class="w-full h-8 pl-[32px] pr-sm bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline transition-all" placeholder="Search records by ID, status, or tag..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-sm">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded transition-colors active:opacity-80 cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded transition-colors active:opacity-80 cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant ml-sm overflow-hidden cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A minimalist digital illustration of a generic user avatar placeholder, composed of smooth geometric shapes in cool, muted blues and greys. The lighting is soft and flat, emphasizing the utilitarian and calm aesthetic of the interface. High-key light-mode styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB45zn3hoMl4vIbukjFMPB0kTUd7XSKWs8pCjUdNd7UkLgn0rsR6LQ44aMOBwgYTkiZuGJVcS6H3N5chijBLgOd-VJDanX1aYHdqp5qms1G0p7Q2HPPMaSfSEb2NjlDsDdf89aKbukFJVwykVLRvMtySExNChkITAuwZ7Fm8nRZ_LfkdN5KgGMZWB7A5pBkAJiaKbGdiR9OirHwoQ1eO5mixkW9KGIgCGYFdsO-KrP_1xP3d5M-R4enKYyd2KxkBaAoN7031Ltkd3ZK"/>
+</div>
+</div>
+</header>
+<!-- Record Operations Canvas -->
+<div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<!-- List & Metrics Area -->
+<div class="flex-1 flex flex-col min-w-0 border-r border-outline-variant bg-surface-bright">
+<!-- Metrics Toolbar -->
+<div class="p-gutter flex flex-col sm:flex-row justify-between items-start sm:items-center gap-gutter border-b border-outline-variant bg-surface-container-lowest shrink-0">
+<div class="flex gap-gutter">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Total Tasks</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">1,248</span>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant hidden sm:block self-center"></div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Pending</span>
+<span class="font-headline-sm text-headline-sm text-primary">42</span>
+</div>
+<div class="w-[1px] h-8 bg-outline-variant hidden sm:block self-center"></div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Completed</span>
+<span class="font-headline-sm text-headline-sm text-secondary">1,180</span>
+</div>
+</div>
+<div class="flex gap-sm w-full sm:w-auto">
+<button class="flex items-center justify-center gap-xs px-sm py-[6px] border border-outline-variant rounded bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors flex-1 sm:flex-none">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+                            Filter
+                        </button>
+<button class="flex items-center justify-center gap-xs px-sm py-[6px] bg-primary-container text-on-primary border border-primary-container rounded font-label-md text-label-md hover:opacity-90 transition-opacity shadow-[0_1px_2px_rgba(0,0,0,0.05)] flex-1 sm:flex-none">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                            Create Record
+                        </button>
+</div>
+</div>
+<!-- Dense Task List -->
+<div class="flex-1 overflow-y-auto bg-surface-container-lowest p-gutter">
+<!-- Table Header -->
+<div class="grid grid-cols-[auto_1fr_100px_100px_80px_40px] gap-sm px-sm py-xs border-b border-outline-variant mb-xs text-on-surface-variant font-label-md text-label-md">
+<div class="w-4"></div> <!-- Checkbox placeholder -->
+<div>Task ID / Description</div>
+<div>Status</div>
+<div>Priority</div>
+<div class="text-right">Assigned</div>
+<div></div> <!-- Actions placeholder -->
+</div>
+<!-- List Items -->
+<div class="flex flex-col gap-[2px]">
+<!-- Row 1 (Selected) -->
+<div class="grid grid-cols-[auto_1fr_100px_100px_80px_40px] items-center gap-sm p-sm bg-surface-container-low border border-primary/20 rounded cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 bg-surface-container-lowest" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">TC-9042: Implement retry logic for API ingestion</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Source: System Integration</span>
+</div>
+<div>
+<span class="inline-flex items-center px-2 py-[2px] rounded-sm bg-surface-tint/10 border border-primary/20 text-primary font-label-xs text-label-xs">In Progress</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-xs font-body-sm text-body-sm text-error">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> High
+                                </span>
+</div>
+<div class="text-right font-body-sm text-body-sm text-on-surface-variant">
+                                JS
+                            </div>
+<div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-[auto_1fr_100px_100px_80px_40px] items-center gap-sm p-sm bg-surface-container-lowest border border-transparent border-b-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 bg-surface-container-lowest" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">TC-9041: Update schema definitions</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Source: Data Engineering</span>
+</div>
+<div>
+<span class="inline-flex items-center px-2 py-[2px] rounded-sm bg-surface-variant border border-outline-variant text-on-surface-variant font-label-xs text-label-xs">Pending</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">remove</span> Normal
+                                </span>
+</div>
+<div class="text-right font-body-sm text-body-sm text-on-surface-variant">
+                                Unassigned
+                            </div>
+<div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Row 3 (Error State Example) -->
+<div class="grid grid-cols-[auto_1fr_100px_100px_80px_40px] items-center gap-sm p-sm bg-error-container/20 border border-error/30 rounded cursor-pointer group relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error rounded-l"></div>
+<input class="w-4 h-4 rounded-sm border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 bg-surface-container-lowest ml-1" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">TC-9038: Sync user metadata</span>
+<span class="font-body-sm text-body-sm text-error truncate">Failed: Connection timeout after 30s</span>
+</div>
+<div>
+<span class="inline-flex items-center px-2 py-[2px] rounded-sm bg-error-container border border-error/50 text-error font-label-xs text-label-xs">Failed</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">remove</span> Normal
+                                </span>
+</div>
+<div class="text-right font-body-sm text-body-sm text-on-surface-variant">
+                                System
+                            </div>
+<div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview Panel (Right Side) -->
+<aside class="w-full md:w-[360px] lg:w-[420px] bg-surface-container-lowest flex flex-col shrink-0 border-t md:border-t-0 md:border-l border-outline-variant h-[512px] md:h-auto overflow-y-auto">
+<!-- Preview Header -->
+<div class="p-gutter border-b border-outline-variant sticky top-0 bg-surface-container-lowest z-10 flex justify-between items-start">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Record Details</span>
+<span class="inline-flex items-center px-2 py-[2px] rounded-sm bg-surface-tint/10 border border-primary/20 text-primary font-label-xs text-label-xs">In Progress</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-xs">TC-9042: Implement retry logic for API ingestion</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Created on Oct 24, 2023 at 14:30 GMT</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">close_fullscreen</span>
+</button>
+</div>
+<!-- Preview Content -->
+<div class="p-gutter flex flex-col gap-gutter">
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 gap-sm p-sm bg-surface-container-low rounded border border-outline-variant">
+<div>
+<span class="block font-label-xs text-label-xs text-on-surface-variant mb-[2px]">Assignee</span>
+<span class="font-body-sm text-body-sm text-on-surface flex items-center gap-xs">
+<div class="w-4 h-4 rounded-full bg-secondary text-[8px] text-on-secondary flex items-center justify-center">JS</div>
+                                Jane Smith
+                            </span>
+</div>
+<div>
+<span class="block font-label-xs text-label-xs text-on-surface-variant mb-[2px]">Priority</span>
+<span class="font-body-sm text-body-sm text-error flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> High
+                            </span>
+</div>
+<div>
+<span class="block font-label-xs text-label-xs text-on-surface-variant mb-[2px]">Source</span>
+<span class="font-body-sm text-body-sm text-on-surface">System Integration</span>
+</div>
+<div>
+<span class="block font-label-xs text-label-xs text-on-surface-variant mb-[2px]">Tags</span>
+<div class="flex gap-1">
+<span class="px-[6px] py-[2px] bg-primary/5 border border-primary/20 rounded-sm font-label-xs text-label-xs text-primary">API</span>
+<span class="px-[6px] py-[2px] bg-primary/5 border border-primary/20 rounded-sm font-label-xs text-label-xs text-primary">Core</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-xs">Description</h3>
+<div class="p-sm bg-surface-container-lowest border border-outline-variant rounded font-body-sm text-body-sm text-on-surface-variant whitespace-pre-wrap">The current ingestion pipeline fails silently when the external endpoint times out. 
+
+Required changes:
+1. Implement exponential backoff (max 3 retries).
+2. Log failure reason to centralized monitoring.
+3. Alert dev-ops channel on persistent failure.
+
+Ensure unit tests cover timeout scenarios.</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-sm mt-sm pt-gutter border-t border-outline-variant">
+<button class="flex-1 flex items-center justify-center px-sm py-[6px] border border-outline-variant rounded bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+                            Edit Record
+                        </button>
+<button class="flex-1 flex items-center justify-center px-sm py-[6px] border border-outline-variant rounded bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+                            Change Status
+                        </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

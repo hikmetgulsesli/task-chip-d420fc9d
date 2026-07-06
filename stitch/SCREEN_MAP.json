@@ -1,0 +1,29 @@
+[
+  {
+    "screenId": "91f48b9246c84eedb3255a31f8e7eabc",
+    "name": "Record Editor - Task Chip",
+    "type": "form",
+    "description": "Record Editor - Task Chip screen",
+    "surfaceIds": [
+      "SURF_RECORD_EDITOR"
+    ]
+  },
+  {
+    "screenId": "aedd1d5e22684b6aa288f2395207aec1",
+    "name": "Insights - Task Chip",
+    "type": "app-screen",
+    "description": "Insights - Task Chip screen",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "89525dad7326499eb3656c8b0bd2f331",
+    "name": "Record Operations - Task Chip",
+    "type": "app-screen",
+    "description": "Record Operations - Task Chip screen",
+    "surfaceIds": [
+      "SURF_RECORD_OPERATIONS"
+    ]
+  }
+]
