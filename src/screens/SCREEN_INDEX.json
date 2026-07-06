@@ -1,0 +1,358 @@
+[
+  {
+    "screenId": "91f48b9246c84eedb3255a31f8e7eabc",
+    "title": "Record Editor - Task Chip",
+    "componentName": "RecordEditorTaskChip",
+    "file": "src/screens/RecordEditorTaskChip.tsx",
+    "buttons": 5,
+    "inputs": 2,
+    "links": 12,
+    "actions": [
+      {
+        "id": "add-1",
+        "kind": "button",
+        "label": "Add",
+        "index": 0
+      },
+      {
+        "id": "settings-2",
+        "kind": "button",
+        "label": "Settings",
+        "index": 1
+      },
+      {
+        "id": "dismiss-3",
+        "kind": "button",
+        "label": "Dismiss",
+        "index": 2
+      },
+      {
+        "id": "save-record-4",
+        "kind": "button",
+        "label": "Save Record",
+        "index": 3
+      },
+      {
+        "id": "cancel-edit-5",
+        "kind": "button",
+        "label": "Cancel Edit",
+        "index": 4
+      },
+      {
+        "id": "records-1",
+        "kind": "link",
+        "label": "Records",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "editor-2",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "records-4",
+        "kind": "link",
+        "label": "Records",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "editor-5",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "insights-6",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "settings-7",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "help-8",
+        "kind": "link",
+        "label": "Help",
+        "href": "#",
+        "index": 7
+      },
+      {
+        "id": "records-9",
+        "kind": "link",
+        "label": "Records",
+        "href": "#",
+        "index": 8
+      },
+      {
+        "id": "status-10",
+        "kind": "link",
+        "label": "Status",
+        "href": "#",
+        "index": 9
+      },
+      {
+        "id": "documentation-11",
+        "kind": "link",
+        "label": "Documentation",
+        "href": "#",
+        "index": 10
+      },
+      {
+        "id": "feedback-12",
+        "kind": "link",
+        "label": "Feedback",
+        "href": "#",
+        "index": 11
+      }
+    ]
+  },
+  {
+    "screenId": "aedd1d5e22684b6aa288f2395207aec1",
+    "title": "Insights - Task Chip",
+    "componentName": "InsightsTaskChip",
+    "file": "src/screens/InsightsTaskChip.tsx",
+    "buttons": 5,
+    "inputs": 1,
+    "links": 12,
+    "actions": [
+      {
+        "id": "add-1",
+        "kind": "button",
+        "label": "Add",
+        "index": 0
+      },
+      {
+        "id": "settings-2",
+        "kind": "button",
+        "label": "Settings",
+        "index": 1
+      },
+      {
+        "id": "filter-insights-3",
+        "kind": "button",
+        "label": "Filter Insights",
+        "index": 2
+      },
+      {
+        "id": "export-summary-4",
+        "kind": "button",
+        "label": "Export Summary",
+        "index": 3
+      },
+      {
+        "id": "go-to-editor-5",
+        "kind": "button",
+        "label": "Go to Editor",
+        "index": 4
+      },
+      {
+        "id": "records-1",
+        "kind": "link",
+        "label": "Records",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "editor-2",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "settings-4",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "help-5",
+        "kind": "link",
+        "label": "Help",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "view-all-6",
+        "kind": "link",
+        "label": "View All",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "status-7",
+        "kind": "link",
+        "label": "Status",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "documentation-8",
+        "kind": "link",
+        "label": "Documentation",
+        "href": "#",
+        "index": 7
+      },
+      {
+        "id": "feedback-9",
+        "kind": "link",
+        "label": "Feedback",
+        "href": "#",
+        "index": 8
+      },
+      {
+        "id": "records-10",
+        "kind": "link",
+        "label": "Records",
+        "href": "#",
+        "index": 9
+      },
+      {
+        "id": "editor-11",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 10
+      },
+      {
+        "id": "insights-12",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 11
+      }
+    ]
+  },
+  {
+    "screenId": "89525dad7326499eb3656c8b0bd2f331",
+    "title": "Record Operations - Task Chip",
+    "componentName": "RecordOperationsTaskChip",
+    "file": "src/screens/RecordOperationsTaskChip.tsx",
+    "buttons": 10,
+    "inputs": 4,
+    "links": 5,
+    "actions": [
+      {
+        "id": "add-1",
+        "kind": "button",
+        "label": "Add",
+        "index": 0
+      },
+      {
+        "id": "settings-2",
+        "kind": "button",
+        "label": "Settings",
+        "index": 1
+      },
+      {
+        "id": "filter-3",
+        "kind": "button",
+        "label": "Filter",
+        "index": 2
+      },
+      {
+        "id": "create-record-4",
+        "kind": "button",
+        "label": "Create Record",
+        "index": 3
+      },
+      {
+        "id": "edit-5",
+        "kind": "button",
+        "label": "Edit",
+        "index": 4
+      },
+      {
+        "id": "edit-6",
+        "kind": "button",
+        "label": "Edit",
+        "index": 5
+      },
+      {
+        "id": "edit-7",
+        "kind": "button",
+        "label": "Edit",
+        "index": 6
+      },
+      {
+        "id": "close-fullscreen-8",
+        "kind": "button",
+        "label": "Close Fullscreen",
+        "index": 7
+      },
+      {
+        "id": "edit-record-9",
+        "kind": "button",
+        "label": "Edit Record",
+        "index": 8
+      },
+      {
+        "id": "change-status-10",
+        "kind": "button",
+        "label": "Change Status",
+        "index": 9
+      },
+      {
+        "id": "records-1",
+        "kind": "link",
+        "label": "Records",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "editor-2",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "settings-4",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "help-5",
+        "kind": "link",
+        "label": "Help",
+        "href": "#",
+        "index": 4
+      }
+    ]
+  }
+]
